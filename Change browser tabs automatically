@@ -1,1 +1,39 @@
 
+The Point of this project is to automaticly change tabs after a minute more or less, you can change the values of the time, the browser you choose the site etc..
+::
+This code is bash and it was made for windows, it uses a library tha is free and everyone can download: https://www.nirsoft.net/utils/nircmd.html
+::
+So what i made is a .bat file thats executes what is in it(create a notepad put this code in it, save as .bat and its done), the code I put is above 
+
+↧↧↧↧↧C0DE↧↧↧↧↧
+
+"So that is a bat file so you can put some comands if you want here and change the way you like, everything you can execute in cmd/terminal you can execute there"
+
+start "start a service" firefox.exe "you can choose the browser you like" -new-window "options" somesite.com "site you choose"
+:start	
+	nircmd"the library you use to execute this code" win max "max to maximize, min to minimize" process "firefox.exe somesite.com"
+	nircmd movecursor 10000 10000 "this is just because i have a problem when open the firefox with this code it just dont show the site the way it is and to solve that you need to move the cursor to the top of the screen i dont know why"
+	timeout 1 "timeout is the time that takes to perform the next line or action"
+	nircmd movecursor -10000 -10000
+	nircmd movecursor 10 10
+	timeout 5
+	nircmd movecursor -10 -10
+	timeout 120
+	nircmd win min process "firefox.exe somesite.com"
+	timeout 1
+	nircmd win max process "firefox.exe somesite.com"
+	nircmd movecursor 10000 10000
+	timeout 1
+	nircmd movecursor -10000 -10000
+	nircmd movecursor 10 10
+	timeout 5
+	nircmd movecursor -10 -10
+	timeout 120
+	nircmd win min process "firefox.exe somesite.com"
+	timeout 1
+
+goto start
+
+➤"explanation"
+
+
