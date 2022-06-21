@@ -1,0 +1,8 @@
+Its all equal to the other file but this one only change ramdom tabs automatically.
+
+start msedge.exe -new-window "ramdom.com"
+start msedge.exe -new-window "ramdom.com"
+:start
+timeout 120
+nircmd sendkeypress alt+tab
+goto start
